@@ -86,6 +86,9 @@ choice
 	config DEFAULT_NOOP
 		bool "No-op"
 
+	config DEFAULT_ROW
+		bool "ROW" if IOSCHED_ROW=y
+
 endchoice
 
 config DEFAULT_IOSCHED
@@ -95,6 +98,7 @@ config DEFAULT_IOSCHED
 	default "row" if DEFAULT_ROW
 	default "sio" if DEFAULT_SIO
 	default "noop" if DEFAULT_NOOP
+	default "row" if DEFAULT_ROW
 
 endmenu
 
